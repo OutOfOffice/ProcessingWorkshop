@@ -34,8 +34,8 @@ void setup() {
   background(255);
 
   // presets 
-  int rows = 4;
-  int cols = 4;
+  int rows = 12;
+  int cols = 12;
   float outerRadius = width/cols;
 
   // randomly generated

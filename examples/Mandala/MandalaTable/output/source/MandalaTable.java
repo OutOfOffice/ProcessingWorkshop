@@ -50,8 +50,8 @@ public void setup() {
   background(255);
 
   // presets 
-  int rows = 10;
-  int cols = 10;
+  int rows = 12;
+  int cols = 12;
   float outerRadius = width/cols;
 
   // randomly generated
