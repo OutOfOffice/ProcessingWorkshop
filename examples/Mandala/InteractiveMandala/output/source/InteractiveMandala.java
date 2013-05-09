@@ -12,11 +12,12 @@ import java.io.InputStream;
 import java.io.OutputStream; 
 import java.io.IOException; 
 
-public class SimpleMandala extends PApplet {
+public class InteractiveMandala extends PApplet {
 
 // Adapted from:
 // Processing, Creative Coding and Generative Art in Processing 2
 // Chapter 3, Simple Mandala, pg 99
+float RAD_IN_FACTOR = 0.7f;
 
 public void star(int pointCount, float innerRadius, float outerRadius) {
   float theta = 0.0f;
@@ -46,33 +47,35 @@ public void star(int pointCount, float innerRadius, float outerRadius) {
 } // end star
 
 public void setup() {
-  int NUM_POINTS = 8;
-  int STEPS = 50;
-  float RAD_IN_FACTOR = 0.7f;
-
   size(1000, 1000);
-  background(255);
   noStroke();
-  translate(width/2, height/2);
+}
+
+public void draw() {
+  int pointCount = PApplet.parseInt(map(mouseX, 0, width, 3, 100));
+  int steps = PApplet.parseInt(map(mouseY, 0, height, 5, 100));
 
   float outerRadius = width*0.5f;
   float innerRadius = outerRadius*RAD_IN_FACTOR;
-  float outerRadiusRatio = outerRadius/STEPS;
-  float innerRadiusRatio = innerRadius/STEPS;
-  float shadeRatio = 255.0f/STEPS;
-  float rotationRatio = 45.0f/STEPS;
+  float outerRadiusRatio = outerRadius/steps;
+  float innerRadiusRatio = innerRadius/steps;
+  float shadeRatio = 255.0f/steps;
+  float rotationRatio = 45.0f/steps;
 
-  for (int i=0; i<STEPS; i++) {
+  background(255);
+  translate(width/2, height/2);
+
+  for (int i=0; i<steps; i++) {
     stroke(255-shadeRatio*i, 100);
     fill(shadeRatio*i);
     pushMatrix();
     rotate(rotationRatio*i*PI/180);
-    star(NUM_POINTS, outerRadius-outerRadiusRatio*i, innerRadius-innerRadiusRatio*i);
+    star(pointCount, outerRadius-outerRadiusRatio*i, innerRadius-innerRadiusRatio*i);
     popMatrix();
   }
 }
   static public void main(String[] passedArgs) {
-    String[] appletArgs = new String[] { "SimpleMandala" };
+    String[] appletArgs = new String[] { "InteractiveMandala" };
     if (passedArgs != null) {
       PApplet.main(concat(appletArgs, passedArgs));
     } else {
