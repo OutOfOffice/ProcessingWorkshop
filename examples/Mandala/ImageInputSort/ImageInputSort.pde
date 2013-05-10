@@ -39,8 +39,11 @@ void setup() {
       startColors[colorIdx] = img.pixels[pixelIdx];
     }
   }
-  sortedColors = sort(startColors);
 
+  // Draw unsorted colors:
   // drawColors(startColors);
+
+  // Draw naively sorted colors:
+  sortedColors = sort(startColors);
   drawColors(sortedColors);
 }

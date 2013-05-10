@@ -45,8 +45,8 @@ public void setup() {
   numRows = PApplet.parseInt(height/rowHeight);
   
   int numMovers = numCols*numRows;
-
   startColors = new int[numMovers];
+
   int pixelIdx, colorIdx;
   for (int row=0; row<numRows; row++) {
     for(int col=0; col<numCols; col++) {
@@ -55,9 +55,12 @@ public void setup() {
       startColors[colorIdx] = img.pixels[pixelIdx];
     }
   }
-  sortedColors = sort(startColors);
 
+  // Draw unsorted colors:
   // drawColors(startColors);
+
+  // Draw naively sorted colors:
+  sortedColors = sort(startColors);
   drawColors(sortedColors);
 }
   static public void main(String[] passedArgs) {
