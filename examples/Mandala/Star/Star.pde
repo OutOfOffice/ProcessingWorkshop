@@ -26,13 +26,14 @@ void star(int pointCount, float innerRadius, float outerRadius) {
 } // end star
 
 void setup() {
-  int NUM_POINTS = 80;
-  float RAD_IN_PCT = 0.2;
+  int pointCount = 5;
+  float radiusRatio = 0.5;
 
   size(1000, 1000);
   translate(width/2, height/2);
-  background(0);
+  background(255);
+  fill(0);
   float radOut = height/2.3;
-  float radIn = radOut*RAD_IN_PCT;
-  star(NUM_POINTS, radIn, radOut);
+  float radIn = radOut*radiusRatio;
+  star(pointCount, radIn, radOut);
 }
