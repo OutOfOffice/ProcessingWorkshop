@@ -74,7 +74,6 @@ public void draw() {
   noFill();
   if (counter == pointCount+1) {
     stroke(0,0,255);
-
     ellipse(0, 0, radIn*2, radIn*2);
   } else if (counter == pointCount+2) {
     stroke(255,0,0);
