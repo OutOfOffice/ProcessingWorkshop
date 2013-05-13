@@ -5,7 +5,7 @@ A mini-workshop for artists interested in Processing.
 
 Examples:
 
-#Palate Selector
+#Palette Selector
 
 ![palate](http://i.imgur.com/g1nNldj.png)
 
