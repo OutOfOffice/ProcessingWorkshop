@@ -20,3 +20,7 @@ Examples:
 into this!:
 
 ![beard](http://i.imgur.com/aAthX5T.png)
+
+#3D Macarons (Kyle)
+
+![macarons](http://i.imgur.com/vgyGQQj.png)
