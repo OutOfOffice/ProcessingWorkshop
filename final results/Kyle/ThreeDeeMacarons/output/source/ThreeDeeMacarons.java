@@ -45,14 +45,6 @@ public void drawColors(int colors[]) {
   }
 }
 
-public void keyPressed() {
-  if (key == 'j' && key == 'J') {
-    zRange = max(0, zRange - 100);
-  } else if (key == 'l' && key == 'L') {
-    zRange = min(1000, zRange + 100);
-  }
-}
-
 public void setup() {
   zRange = 1000;
 
